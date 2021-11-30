@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function computerPlay() {
+        return Math.floor(Math.random() * 3);
+    }
+
+    let computerSelection = computerPlay();
+    if (computerPlay() === 0) {
+        computerSelection = "rock";
+    } else if (computerPlay() === 1) {
+        computerSelection = 'paper';
+    } else {
+        computerSelection = "scissors";
+    }
+
+
+    function playerPlay(choice) {
+        return choice.toLowerCase();
+    }
+    let playerSelection = playerPlay('paper');
+
+    function gamePlay() {
+        if (playerSelection == computerSelection) {
+            console.log("You tied!");
+        } else if (playerSelection == 'paper' && computerSelection == "rock") {
+            console.log("You win! " + playerSelection + " beats " + computerSelection + ".");
+
+        } else if (playerSelection == 'paper' && computerSelection == "scissors") {
+            console.log("You Lose! " + computerSelection + " beats " + playerSelection + ".");
+
+        } else if (playerSelection == 'rock' && computerSelection == "scissors") {
+            console.log("You win! " + playerSelection + " beats " + computerSelection + ".");
+
+        } else if (playerSelection == 'scissors' && computerSelection == "paper") {
+            console.log("You win! " + playerSelection + " beats " + computerSelection + ".");
+
+        } else if (playerSelection == 'rock' && computerSelection == "paper") {
+            console.log("You Lose! " + computerSelection + " beats " + playerSelection + ".");
+
+        } else if (playerSelection == 'scissors' && computerSelection == "rock") {
+            console.log("You Lose! " + computerSelection + " beats " + playerSelection + ".");
+
+        }
+        else {
+            console.log('Whoops!');
+        }
+    }
+    console.log("The Computer chose " + computerSelection);
+    console.log("You Chose " + playerSelection);
+    console.log(gamePlay());
+
+
+
+
+</script>
+
+</html>
