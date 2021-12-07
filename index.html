@@ -31,36 +31,42 @@
     }
     let playerSelection = playerPlay('paper');
 
-    function gamePlay() {
+    function playRound(playerSelection, computerSelection) {
+
         if (playerSelection == computerSelection) {
-            console.log("You tied!");
+            return "You tied!";
         } else if (playerSelection == 'paper' && computerSelection == "rock") {
-            console.log("You win! " + playerSelection + " beats " + computerSelection + ".");
+            return "You win! " + playerSelection + " beats " + computerSelection + ".";
 
         } else if (playerSelection == 'paper' && computerSelection == "scissors") {
-            console.log("You Lose! " + computerSelection + " beats " + playerSelection + ".");
+            return "You Lose! " + computerSelection + " beats " + playerSelection + ".";
 
         } else if (playerSelection == 'rock' && computerSelection == "scissors") {
-            console.log("You win! " + playerSelection + " beats " + computerSelection + ".");
+            return "You win! " + playerSelection + " beats " + computerSelection + ".";
 
         } else if (playerSelection == 'scissors' && computerSelection == "paper") {
-            console.log("You win! " + playerSelection + " beats " + computerSelection + ".");
+            return "You win! " + playerSelection + " beats " + computerSelection + ".";
 
         } else if (playerSelection == 'rock' && computerSelection == "paper") {
-            console.log("You Lose! " + computerSelection + " beats " + playerSelection + ".");
+            return "You Lose! " + computerSelection + " beats " + playerSelection + ".";
 
         } else if (playerSelection == 'scissors' && computerSelection == "rock") {
-            console.log("You Lose! " + computerSelection + " beats " + playerSelection + ".");
+            return "You Lose! " + computerSelection + " beats " + playerSelection + ".";
 
         }
         else {
-            console.log('Whoops!');
+            return 'Whoops!';
         }
     }
-    console.log("The Computer chose " + computerSelection);
-    console.log("You Chose " + playerSelection);
-    console.log(gamePlay());
+    function displayChoices() {
+        console.log("The Computer chose " + computerSelection);
+        console.log("You Chose " + playerSelection);
+        console.log(playRound(playerSelection, computerSelection));
 
+    }
+    console.log(displayChoices());
+
+    console.log(displayChoices());
 
 
 

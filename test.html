@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // create a function allowing the computer to play
+
+    let randomChoice = Math.floor(Math.random() * 3);
+    function computerPlay() {
+        if (randomChoice === 0) {
+            return 'rock'
+        } else if (randomChoice === 1) {
+            return 'paper'
+        } else {
+            return 'scissors'
+        }
+    }
+    let compChoice = computerPlay();
+
+    // create a variable allowing the player to submit a choice
+    const playerChoice = window.prompt('Choose from the following: Rock, Paper, or Scissors').toLowerCase();
+
+    // compare computer answer to player and log winner
+    function playRound() {
+        if (compChoice === playerChoice) {
+            return `It's a tie! You both chose ${compChoice}.`;
+        } else if (compChoice == 'rock' && playerChoice == 'scissors') {
+            return `You lose. ${compChoice} beats ${playerChoice}`;
+        } else if (compChoice == 'rock' && playerChoice == 'paper') {
+            return `You win! ${playerChoice} beats ${compChoice}`;
+        } else if (compChoice == 'paper' && playerChoice == 'rock') {
+            return `You lose. ${compChoice} beats ${playerChoice}`;
+        } else if (compChoice == 'paper' && playerChoice == 'scissors') {
+            return `You win! ${playerChoice} beats ${compChoice}`;
+        } else if (compChoice == 'scissors' && playerChoice == 'paper') {
+            return `You lose. ${compChoice} beats ${playerChoice}`;
+        } else if (compChoice == 'scissors' && playerChoice == 'rock') {
+            return `You win! ${playerChoice} beats ${compChoice}`;
+        } else {
+            return `Oops! Something went wrong. You chose ${playerChoice}. Please select rock, paper, or scissors instead!`;
+        }
+
+    }
+
+
+
+
+    function game() {
+        console.log(`The computer chose: ${compChoice}.`);
+        console.log(`You chose ${playerChoice}.`)
+        console.log(playRound());
+    }
+    console.log(game());
+</script>
+
+</html>
